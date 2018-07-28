@@ -1,0 +1,19 @@
+@RELATION gan
+
+@ATTRIBUTE Da 		{Vang,NoiMun}
+@ATTRIBUTE Mat	 	{Vang,BT}
+@ATTRIBUTE Bung 	{Chuong, Dau, KhoTieu}
+@ATTRIBUTE CamGiac	{BuonNon, OChua}
+@ATTRIBUTE class 	{XoGan, MenGanCao, NhiemMo}
+
+@DATA
+Vang,Vang,Chuong,OChua,MenGanCao
+Vang,BT,Chuong,OChua,MenGanCao
+Vang,BT,Dau,OChua,XoGan
+Vang,BT,Dau,BuonNon,XoGan
+Vang,Vang,Dau,BuonNon,XoGan
+Vang,BT,Dau,OChua,XoGan
+Vang,Vang,Dau,OChua,XoGan
+Vang,Vang,KhoTieu,OChua,NhiemMo
+Vang,Vang,KhoTieu,BuonNon,NhiemMo
+Vang,BT,KhoTieu,OChua,NhiemMo

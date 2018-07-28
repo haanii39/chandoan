@@ -1,0 +1,14 @@
+@RELATION tieuhoa
+
+@ATTRIBUTE Bung 	{Chuong, Dau, KhoTieu}
+@ATTRIBUTE CamGiac	{BuonNon, OChua}
+@ATTRIBUTE class 	{BaoTu, ChuongBung}
+
+@DATA
+Dau,BuonNon,BaoTu
+Dau,OChua,BaoTu
+Dau,BuonNon,BaoTu
+Chuong,BuonNon,ChuongBung
+Chuong,OChua,ChuongBung
+KhoTieu,BuonNon,ChuongBung
+KhoTieu,OChua,ChuongBung
