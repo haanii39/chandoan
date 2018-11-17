@@ -6,24 +6,24 @@
 package Controller;
 
 import Model.Database;
-import Model.Doctor;
+import Model.Patient;
 import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Administrator
  */
-@WebServlet(name = "AdminServlet", urlPatterns = {"/AdminServlet"})
-public class AdminServlet extends HttpServlet {
+@WebServlet(name = "AdminUserServlet", urlPatterns = {"/admin/users/*"})
+public class AdminUserServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +42,10 @@ public class AdminServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AdminServlet</title>");
+            out.println("<title>Servlet AdminUserServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AdminServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AdminUserServlet at " + request.getPathInfo().split("/")[1] + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -63,10 +63,12 @@ public class AdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/adminlogin.jsp");
+        
+        List<Patient> arr= Database.SelectHistory(request.getPathInfo().split("/")[1]);
+        request.setAttribute("ListPatient", arr);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/userdetail.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -81,30 +83,7 @@ public class AdminServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        System.out.println("doPost");
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String fullName = "";
-
-        Doctor admin = Database.AdminLogin(username, password);
-        if (admin == null) {
-            request.setAttribute("error", true);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/adminlogin.jsp");
-            dispatcher.forward(request, response);
-        }
-        HttpSession session = request.getSession(true);
-
-        // Check if this is new comer on your web page.
-        session.setAttribute("admin", admin);
-        request.setAttribute("users", Database.getAllUsers());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin.jsp");
-        //  RequestDispatcher dispatcher = request.getRequestDispatcher("/ChanDoanServlet");
-        dispatcher.forward(request, response);
-
+        processRequest(request, response);
     }
 
     /**

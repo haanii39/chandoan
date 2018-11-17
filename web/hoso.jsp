@@ -112,20 +112,20 @@
                                                 </tr>
                                                 <c:forEach items='<%= (ArrayList)request.getAttribute("ListPatient")%>' var="entry">
                                                     <tr>
-                                                    <td>
+                                                        <td>
                                                             ${entry.getTongQuat()}
                                                         </td>
-                                                             <td>
+                                                        <td>
                                                             ${entry.getChuyenKhoa()}
                                                         </td>
-                                                             <td>
+                                                        <td>
                                                             ${entry.getThoiGian()}
                                                         </td>
-                                                             <td>
-                                                                 ${entry.getNhanXet()}
-                                                            
+                                                        <td>
+                                                            ${entry.getNhanXet()}
+
                                                         </td>
-                                                </tr>   
+                                                    </tr>   
 
                                                 </c:forEach>
 

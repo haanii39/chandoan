@@ -8,11 +8,13 @@ package Model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import org.apache.tomcat.jni.Address;
@@ -161,6 +163,32 @@ public class Database {
         return listPatient;
     }
 
+    public static List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
+
+        try {
+            Connection con = SQLServerConnUtils_SQLJDBC.getSQLServerConnection_SQLJDBC();
+            System.out.println("Kết nối thành công");
+
+            Statement st = con.createStatement();
+
+            // execute the query, and get a java resultset
+            ResultSet rs = st.executeQuery(" Select TENDANGNHAP,HOTEN,NGAYSINH,DIACHI from NGUOIDUNG ");
+            while (rs.next()) {
+                String name = rs.getString("TENDANGNHAP");
+                String hoTen = rs.getString("HOTEN");
+                Date ngaySinh = rs.getDate("NGAYSINH");
+                String diaChi = rs.getString("DIACHI");
+                User user = new User(name, hoTen, ngaySinh, diaChi);
+                users.add(user);
+            }
+            System.out.println(Arrays.toString(users.toArray()));
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return users;
+    }
+
     public static List<Patient> SearchHistory(String username) {
         //public ArrayList<Patient> SelectHistory(String username) {
         // Patient patient = new Patient(username, username, username);
@@ -222,6 +250,7 @@ public class Database {
         }
 
     }
+
     public static Doctor AdminLogin(String username, String password) {
 
         Doctor doctor = null;
@@ -247,17 +276,16 @@ public class Database {
         return doctor;
     }
 
-
     public static void main(String[] args) {
 
         System.out.println("hi");
         //Patient t= new Patient(null, null, null, null,null, null);
-       //  List<Patient> arr = SearchHistory("nhinhi");
+        //  List<Patient> arr = SearchHistory("nhinhi");
         // p = SelectHistory("nhinhi");
         //User  u = Login("huyhuy","123");
         //  AdminUpdate("74", "Ăn uống điều độ");
-        Doctor d =AdminLogin("admin","456");
-       // User  u = Login("huyhuy","123");
+        Doctor d = AdminLogin("admin", "456");
+        // User  u = Login("huyhuy","123");
     }
 
 }

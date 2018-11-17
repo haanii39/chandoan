@@ -1,11 +1,6 @@
-
-<!--
-*
-*  INSPINIA - Responsive Admin Theme
-*  version 2.8
-*
--->
-
+<%@page import="java.util.ArrayList"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -247,59 +242,31 @@
                                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                                             <thead>
                                                 <tr>
-                                                    <th>Rendering engine</th>
-                                                    <th>Browser</th>
-                                                    <th>Platform(s)</th>
-                                                    <th>Engine version</th>
-                                                    <th>CSS grade</th>
+                                                    <th>Họ tên</th>
+                                                    <th>Ngày sinh</th>
+                                                    <th>Địa chỉ</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="gradeX">
-                                                    <td>Misc</td>
-                                                    <td>Links</td>
-                                                    <td>Text only</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">X</td>
-                                                </tr>
-                                                <tr class="gradeX">
-                                                    <td>Misc</td>
-                                                    <td>Lynx</td>
-                                                    <td>Text only</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">X</td>
-                                                </tr>
-                                                <tr class="gradeC">
-                                                    <td>Misc</td>
-                                                    <td>IE Mobile</td>
-                                                    <td>Windows Mobile 6</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">C</td>
-                                                </tr>
-                                                <tr class="gradeC">
-                                                    <td>Misc</td>
-                                                    <td>PSP browser</td>
-                                                    <td>PSP</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">C</td>
-                                                </tr>
-                                                <tr class="gradeU">
-                                                    <td>Other browsers</td>
-                                                    <td>All others</td>
-                                                    <td>-</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">U</td>
-                                                </tr>
+                                                <c:forEach items='<%= (ArrayList) request.getAttribute("users")%>' var="entry">
+                                                    <tr class="gradeX">
+                                                        <td>
+                                                            ${entry.getFullName()}
+                                                        </td>
+                                                        <td>
+                                                            ${entry.getNgaysinh()}
+                                                        </td>
+                                                        <td>
+                                                            ${entry.getDiachi()}
+                                                        </td>
+                                                        <td>
+                                                            <a href="admin/users/${entry.getName()}"><button class="btn btn-sm btn-primary">Chi tiết</button></a>
+                                                        </td>
+                                                    </tr> 
+                                                </c:forEach>
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>Rendering engine</th>
-                                                    <th>Browser</th>
-                                                    <th>Platform(s)</th>
-                                                    <th>Engine version</th>
-                                                    <th>CSS grade</th>
-                                                </tr>
-                                            </tfoot>
+                                            
                                         </table>
                                     </div>
 
@@ -308,7 +275,7 @@
                         </div>
                     </div>
                 </div>
-               
+
                 <div class="footer">
                     <div class="float-right">
                         10GB of <strong>250GB</strong> Free.
@@ -788,15 +755,6 @@
         <
 
         <script>
-            $(document).ready(function(){
-            $('.dataTables-example').DataTable({
-                pageLength: 25,
-                responsive: true,
-                dom: '<"html5buttons"B>lTfgitp',
-            });
-
-        });
-
         </script>
     </body>
 </html>

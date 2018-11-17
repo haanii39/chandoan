@@ -12,12 +12,18 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Controller/Login.java</file>
+            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Model/User.java</file>
             <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Controller/AdminServlet.java</file>
             <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Model/Database.java</file>
-            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/web/login.jsp</file>
+            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/web/admin.jsp</file>
+            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Controller/AdminUserServlet.java</file>
+            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Controller/ChanDoanGanServlet.java</file>
+            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/web/userdetail.jsp</file>
             <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Controller/ChanDoanServlet.java</file>
+            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Controller/HoSoServlet.java</file>
+            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/web/hoso.jsp</file>
             <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/web/adminlogin.jsp</file>
+            <file>file:/D:/Project/Source/Ver%200.4/ChanDoanBenh-master/src/java/Model/Patient.java</file>
         </group>
     </open-files>
 </project-private>

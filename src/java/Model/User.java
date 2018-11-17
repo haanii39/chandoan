@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author Administrator
@@ -14,6 +16,33 @@ public class User {
     private String password;
     private String fullName;
     private String sessionCode;
+    private String diachi;
+    private Date ngaysinh;
+
+    public String getDiachi() {
+        return diachi;
+    }
+
+    public Date getNgaysinh() {
+        return ngaysinh;
+    }
+
+    public void setDiachi(String diachi) {
+        this.diachi = diachi;
+    }
+
+    public void setNgaysinh(Date ngaysinh) {
+        this.ngaysinh = ngaysinh;
+    }
+    
+    
+
+    public User(String name, String fullName,  Date ngaysinh,String diachi) {
+        this.name = name;
+        this.fullName = fullName;
+        this.diachi = diachi;
+        this.ngaysinh = ngaysinh;
+    }
   
     public User(String name, String fullName) {
         this.name = name;

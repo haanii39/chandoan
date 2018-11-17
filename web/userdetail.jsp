@@ -1,11 +1,6 @@
-
-<!--
-*
-*  INSPINIA - Responsive Admin Theme
-*  version 2.8
-*
--->
-
+<%@page import="java.util.ArrayList"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -17,17 +12,17 @@
 
         <title>INSPINIA | Dashboard</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="/ChanDoan/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/ChanDoan/font-awesome/css/font-awesome.css" rel="stylesheet">
 
         <!-- Toastr style -->
-        <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+        <link href="/ChanDoan/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
         <!-- Gritter -->
-        <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+        <link href="/ChanDoan/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
-        <link href="css/animate.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="/ChanDoan/css/animate.css" rel="stylesheet">
+        <link href="/ChanDoan/css/style.css" rel="stylesheet">
 
     </head>
 
@@ -247,59 +242,41 @@
                                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                                             <thead>
                                                 <tr>
-                                                    <th>Rendering engine</th>
-                                                    <th>Browser</th>
-                                                    <th>Platform(s)</th>
-                                                    <th>Engine version</th>
-                                                    <th>CSS grade</th>
+                                                    <th>
+                                                        Khám Tổng Quát
+                                                    </th>
+                                                    <th>
+                                                        Khám Chuyên Khoa
+                                                    </th>
+                                                    <th>
+                                                        Thời Gian Khám
+                                                    </th>
+                                                    <th>
+                                                        Nhận xét
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="gradeX">
-                                                    <td>Misc</td>
-                                                    <td>Links</td>
-                                                    <td>Text only</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">X</td>
-                                                </tr>
-                                                <tr class="gradeX">
-                                                    <td>Misc</td>
-                                                    <td>Lynx</td>
-                                                    <td>Text only</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">X</td>
-                                                </tr>
-                                                <tr class="gradeC">
-                                                    <td>Misc</td>
-                                                    <td>IE Mobile</td>
-                                                    <td>Windows Mobile 6</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">C</td>
-                                                </tr>
-                                                <tr class="gradeC">
-                                                    <td>Misc</td>
-                                                    <td>PSP browser</td>
-                                                    <td>PSP</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">C</td>
-                                                </tr>
-                                                <tr class="gradeU">
-                                                    <td>Other browsers</td>
-                                                    <td>All others</td>
-                                                    <td>-</td>
-                                                    <td class="center">-</td>
-                                                    <td class="center">U</td>
-                                                </tr>
+                                                <c:forEach items='<%= (ArrayList) request.getAttribute("ListPatient")%>' var="entry">
+                                                    <tr class="gradeX">
+                                                        <td>
+                                                            ${entry.getTongQuat()}
+                                                        </td>
+                                                        <td>
+                                                            ${entry.getChuyenKhoa()}
+                                                        </td>
+                                                        <td>
+                                                            ${entry.getThoiGian()}
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nhanXetModal">
+                                                              Chi tiết
+                                                            </button>
+                                                        </td>
+                                                    </tr> 
+                                                </c:forEach>
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>Rendering engine</th>
-                                                    <th>Browser</th>
-                                                    <th>Platform(s)</th>
-                                                    <th>Engine version</th>
-                                                    <th>CSS grade</th>
-                                                </tr>
-                                            </tfoot>
+                                            
                                         </table>
                                     </div>
 
@@ -308,7 +285,7 @@
                         </div>
                     </div>
                 </div>
-               
+
                 <div class="footer">
                     <div class="float-right">
                         10GB of <strong>250GB</strong> Free.
@@ -777,26 +754,37 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="nhanXetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nhận xét</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <textarea type="text" class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 150px;"></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Lưu</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Mainly scripts -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/plugins/dataTables/datatables.min.js"></script>
-        <script src="js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
+        <script src="/ChanDoan/js/jquery.min.js"></script>
+        <script src="/ChanDoan/js/popper.min.js"></script>
+        <script src="/ChanDoan/js/bootstrap.js"></script>
+        <script src="/ChanDoan/js/plugins/dataTables/datatables.min.js"></script>
+        <script src="/ChanDoan/js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
 
         <
 
         <script>
-            $(document).ready(function(){
-            $('.dataTables-example').DataTable({
-                pageLength: 25,
-                responsive: true,
-                dom: '<"html5buttons"B>lTfgitp',
-            });
-
-        });
-
         </script>
     </body>
 </html>
