@@ -1,0 +1,32 @@
+@RELATION gan
+
+@ATTRIBUTE Da 		{Vang,ManNgua,SaoMach,BT}
+@ATTRIBUTE Mat	 	{Vang,BT}
+@ATTRIBUTE Bung 	{Chuong,Dau,KhoTieu,BT}
+@ATTRIBUTE CamGiac	{BuonNon,OChua,NonRaMau, BT}
+@ATTRIBUTE AnUong {ChanAn,KhongNgonMieng,BT}
+@ATTRIBUTE Sot {SotNhe,SotCao,BT}
+@ATTRIBUTE Class 	{XoGan,MenGanCao,NhiemMo,BT}
+
+@DATA
+
+
+Vang,Vang,Chuong,OChua,ChanAn,SotNhe,MenGanCao
+Vang,BT,Dau,OChua,ChanAn,SotNhe,MenGanCao
+ManNgua,BT,Dau,BuonNon,ChanAn,BT,MenGanCao
+ManNgua,BT,Chuong,BuonNon,ChanAn,BT,MenGanCao
+ManNgua,BT,Dau,BuonNon,ChanAn,BT,MenGanCao
+
+Vang,BT,Dau,NonRaMau,KhongNgonMieng,SotNhe,XoGan
+Vang,BT,Dau,BuonNon,KhongNgonMieng,SotNhe,XoGan
+Vang,Vang,Dau,NonRaMau,KhongNgonMieng,SotNhe,XoGan
+Vang,Vang,Dau,OChua,KhongNgonMieng,SotNhe,XoGan
+Vang,Vang,Dau,OChua,ChanAn,BT,XoGan
+BT,BT,BT,BT,BT,BT,BT
+
+
+SaoMach,Vang,Dau,OChua,KhongNgonMieng,BT,NhiemMo
+Vang,Vang,KhoTieu,BuonNon,KhongNgonMieng,BT,NhiemMo
+Vang,BT,KhoTieu,OChua,ChanAn,BT,NhiemMo
+SaoMach,Vang,Dau,OChua,ChanAn,BT,NhiemMo
+SaoMach,Vang,Dau,BuonNon,ChanAn,BT,NhiemMo

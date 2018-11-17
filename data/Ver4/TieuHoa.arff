@@ -1,0 +1,45 @@
+@RELATION TieuHoa
+
+@ATTRIBUTE Sot {BT,SotCao,SotNhe,SotKOD}
+@ATTRIBUTE Bung {BT,DauBung,ChuongBung,SungDau}
+@ATTRIBUTE CamGiac {BT,BuonNon,DayHoi,OChua,NonRaMau}
+@ATTRIBUTE TrieuChung {BT,TaoBon,TieuChay,TraoNguocTA}
+@ATTRIBUTE CanNang {BT,Giam,Tang}
+@ATTRIBUTE AnUong {BT,KhoNuot,ChanAn,KNgon}
+
+@ATTRIBUTE ClassTH {BT,ViemRuotThua,ViemDaDayRuot,ViemLoetDaDay,TraoNguocDaDay}
+
+@DATA
+
+SotNhe,ChuongBung,BuonNon,TaoBon,BT,ChanAn,ViemRuotThua
+SotCao,ChuongBung,BuonNon,TaoBon,BT,ChanAn,ViemRuotThua
+SotNhe,DauBung,BuonNon,TieuChay,Giam,ChanAn,ViemRuotThua
+SotNhe,ChuongBung,BuonNon,TieuChay,BT,BT,ViemRuotThua
+SotNhe,ChuongBung,BuonNon,TaoBon,BT,ChanAn,ViemRuotThua
+BT,ChuongBung,BuonNon,TaoBon,BT,BT,ViemRuotThua
+
+SotCao,DauBung,BuonNon,TieuChay,BT,KNgon,ViemDaDayRuot
+SotNhe,DauBung,BuonNon,TieuChay,Giam,ChanAn,ViemDaDayRuot
+SotCao,DauBung,BuonNon,BT,BT,KNgon,ViemDaDayRuot
+SotNhe,DauBung,BuonNon,TieuChay,BT,KNgon,ViemDaDayRuot
+SotCao,DauBung,BuonNon,BT,Giam,KNgon,ViemDaDayRuot
+SotCao,DauBung,BuonNon,TieuChay,BT,ChanAn,ViemDaDayRuot
+
+BT,DauBung,NonRaMau,BT,Giam,ChanAn,ViemLoetDaDay
+BT,DauBung,OChua,BT,BT,ChanAn,ViemLoetDaDay
+BT,DauBung,DayHoi,BT,Giam,KNgon,ViemLoetDaDay
+BT,DauBung,DayHoi,BT,BT,KNgon,ViemLoetDaDay 
+BT,DauBung,DayHoi,BT,Giam,ChanAn,ViemLoetDaDay
+BT,DauBung,OChua,BT,Giam,KNgon,ViemLoetDaDay
+
+BT,BT,OChua,TraoNguocTA,Giam,KhoNuot,TraoNguocDaDay
+BT,BT,BuonNon,TraoNguocTA,Giam,ChanAn,TraoNguocDaDay
+BT,BT,DayHoi,TraoNguocTA,Giam,ChanAn,TraoNguocDaDay
+BT,BT,BuonNon,TraoNguocTA,Giam,KhoNuot,TraoNguocDaDay
+BT,ChuongBung,BuonNon,TraoNguocTA,Giam,KhoNuot,TraoNguocDaDay
+BT,ChuongBung,DayHoi,TraoNguocTA,Giam,KhoNuot,TraoNguocDaDay
+
+BT,BT,BT,BT,Giam,ChanAn,BT
+BT,BT,BT,BT,BT,BT,BT
+BT,BT,BT,BT,BT,ChanAn,BT
+

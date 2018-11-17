@@ -13,7 +13,7 @@ import weka.core.Instances;
 
 /**
  *
- * @author dien
+ * @author NhiPhan
  */
 public class MyDecisionTreeModel extends MyKnowledgeModel {
 
@@ -22,7 +22,8 @@ public class MyDecisionTreeModel extends MyKnowledgeModel {
     }
 
     public MyDecisionTreeModel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

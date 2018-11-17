@@ -6,9 +6,22 @@
 package Controller;
 
 import Model.ChanDoanBenh;
+import Model.Database;
+import Model.ListTrieuChung;
+import Model.Patient;
+import Model.TongQuat;
+import Model.TuDien;
+import Model.User;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -17,10 +30,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+import utils.JsonUtil;
 
 /**
  *
- * @author Nam
+ * @author NhiPhan
  */
 public class ChanDoanServlet extends HttpServlet {
 
@@ -62,7 +77,13 @@ public class ChanDoanServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+                        
+        request.setAttribute("TuDien", TuDien.tudien);
+        request.setAttribute("lTrieuChung", new ListTrieuChung().TrieuChung);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/chandoan.jsp");
+        dispatcher.forward(request,response);
     }
 
     /**
@@ -78,37 +99,41 @@ public class ChanDoanServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        HttpSession session = request.getSession();
-        String da="";
-        String mat="";
-        String bung="";
-        String camgiac="";
-        String cannang="";
+        User user =  null;
+        user = (User) request.getSession(true).getAttribute("user");
+        String code = "";
         String benh="";
-        String url="";
         try {
-            da = request.getParameter("Da");
-            mat = request.getParameter("Mat");
-            bung = request.getParameter("Bung");
-            cannang = request.getParameter("CanNang");
-            camgiac = request.getParameter("CamGiac");
-            benh = ChanDoanBenh.chanDoan(da, mat, bung, cannang, camgiac);
+            TongQuat tq = new TongQuat();
+            tq.Sot = request.getParameter("Sot");
+            tq.Nguc = request.getParameter("Nguc");
+            tq.Bung = request.getParameter("Bung");
+            tq.Da = request.getParameter("Da");
+            tq.CamGiac = request.getParameter("CamGiac");
+            tq.AnUong = request.getParameter("AnUong");
+            tq.TheTrang =request.getParameter("TheTrang");
+            benh = ChanDoanBenh.chanDoan(tq);
         } catch (Exception ex) {
             Logger.getLogger(ChanDoanServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        if (user != null){
+            code = Database.InsertHistory(user.getName(), benh);
+            user.setSessionCode(code);
+                    HttpSession session = request.getSession(true);
+        session.setAttribute("user", user);
+        }
         PrintWriter out = response.getWriter();
-        response.setContentType("text/plain");
+         response.setContentType("text/plain");
+//        Store benh vao database
+
+        
+        
 	response.getWriter().write(benh);
 //        out.print("GRANTED");
         out.close();
 //        request.setAttribute("benh", benh);
 //        request.getRequestDispatcher("chandoan.jsp").forward(request, response);
-
-
-        
-
     }
-    
 
     /**
      * Returns a short description of the servlet.

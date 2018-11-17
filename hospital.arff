@@ -1,0 +1,48 @@
+@relation hospital
+
+@attribute DauDau {DauDau,BT,NhucDau, DauDauLienTuc,}
+@attribute Ho {HoKhan, HoTangDan, HoCoDam, HoRaMau,BT}
+@attribute Sot {SotCao, SotNhe, BT}
+@attribute Dam {DamKeoDai, MauThayDoi, DamTrang, BT}
+@attribute KhoTho {KhoTho, ThoGap, Thocham, BT}
+@attribute DauNguc {DauNguc, TucNguc,NangNguc,BT}
+@attribute DauHong {DauHong, NguaHong,BT}
+@attribute Mui {ChayNuocMui, HatHoi, NghetMui,BT}
+@attribute Khac {ChanAn, NhucMoi, SutCan,MoHoiTron,RetRun,MatVi,OnLanh,BT}
+@attribute Class {ViemMuiDiUng,HenPheQuan, ViemPhoi, Lao,Cum,BinhThuong}
+@data
+
+DauDau,HoKhan,BT,DamKeoDai,BT,BT,DauHong,ChayNuocMui,MatVi,ViemMuiDiUng
+DauDau,HoKhan,BT,DamKeoDai,BT,BT,DauHong,ChayNuocMui,MatVi,ViemMuiDiUng
+DauDau,HoKhan,BT,DamKeoDai,BT,BT,NguaHong,HatHoi,MatVi,ViemMuiDiUng
+DauDau,HoKhan,BT,DamKeoDai,BT,BT,NguaHong,ChayNuocMui,MatVi,ViemMuiDiUng
+NhucDau,HoKhan,BT,DamKeoDai,BT,BT,DauHong,ChayNuocMui,NhucMoi,ViemMuiDiUng
+
+BT,HoTangDan,BT,DamTrang,ThoGap,NangNguc,BT,BT,NhucMoi,HenPheQuan
+BT,HoTangDan,BT,DamTrang,Thocham,NangNguc,BT,BT,BT,HenPheQuan
+BT,HoTangDan,BT,MauThayDoi,Thocham,TucNguc,BT,BT,ChanAn,HenPheQuan
+BT,HoTangDan,BT,MauThayDoi,Thocham,TucNguc,BT,BT,BT,HenPheQuan
+BT,HoTangDan,BT,MauThayDoi,Thocham,TucNguc,BT,BT,BT,HenPheQuan
+
+NhucDau,HoCoDam,SotCao,MauThayDoi,KhoTho,TucNguc,BT,BT,OnLanh,ViemPhoi
+NhucDau,HoCoDam,SotCao,MauThayDoi,KhoTho,DauNguc,BT,BT,OnLanh,ViemPhoi
+NhucDau,HoKhan,SotCao,MauThayDoi,KhoTho,DauNguc,BT,BT,ChanAn,ViemPhoi
+NhucDau,HoKhan,SotCao,MauThayDoi,KhoTho,TucNguc,BT,BT,ChanAn,ViemPhoi
+
+BT,BT,SotNhe,BT,BT,BT,BT,BT,ChanAn,BinhThuong
+BT,BT,BT,BT,BT,BT,BT,BT,NhucMoi,BinhThuong
+NhucDau,BT,BT,BT,BT,BT,BT,BT,ChanAn,BinhThuong
+BT,BT,SotNhe,BT,BT,BT,BT,BT,NhucMoi,BinhThuong
+BT,BT,BT,BT,BT,BT,BT,BT,BT,BinhThuong
+
+BT,HoRaMau,SotNhe,BT,KhoTho,TucNguc,BT,BT,MoHoiTron,Lao
+BT,HoRaMau,SotCao,BT,KhoTho,TucNguc,BT,BT,MoHoiTron,Lao
+BT,HoCoDam,SotCao,BT,KhoTho,TucNguc,BT,BT,SutCan,Lao
+BT,HoCoDam,SotNhe,BT,KhoTho,TucNguc,BT,BT,NhucMoi,Lao
+BT,HoCoDam,SotNhe,BT,KhoTho,TucNguc,BT,BT,SutCan,Lao
+
+DauDauLienTuc,HoKhan,SotCao,BT,KhoTho,TucNguc,DauHong,NghetMui,RetRun,Cum
+BT,HoKhan,SotCao,BT,KhoTho,TucNguc,DauHong,HatHoi,RetRun,Cum
+DauDauLienTuc,HoKhan,SotCao,BT,KhoTho,TucNguc,DauHong,NghetMui,RetRun,Cum
+DauDauLienTuc,HoKhan,SotCao,BT,KhoTho,TucNguc,DauHong,HatHoi,NhucMoi,Cum
+BT,HoKhan,SotCao,BT,KhoTho,TucNguc,DauHong,NghetMui,NhucMoi,Cum

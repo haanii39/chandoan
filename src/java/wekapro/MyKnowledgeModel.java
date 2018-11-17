@@ -17,7 +17,7 @@ import weka.filters.unsupervised.instance.Resample;
 
 /**
  *
- * @author dien
+ * @author NhiPhan
  */
 public class MyKnowledgeModel {
 

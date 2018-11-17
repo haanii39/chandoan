@@ -1,57 +1,63 @@
-function openModal() {
-document.getElementById('myModal').style.display = "block";
-        }
-
-function closeModal() {
-document.getElementById('myModal').style.display = "none";
-        }
-
-var slideIndex = 1;
-        showSlides(slideIndex);
-        function plusSlides(n) {
-        showSlides(slideIndex += n);
-        }
-
-function currentSlide(n) {
-showSlides(slideIndex = n);
-        }
-
-function showSlides(n) {
-var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
-        if (n > slides.length) {
-slideIndex = 1;
+function getBenh() {
+    //
+    $.post('ChanDoanGanServlet', $('#frm1').serialize(), function (response) {
+        $('#benh').text("Bạn đã bị bệnh: " + response);
+    });
 }
-if (n < 1) {
-slideIndex = slides.length;
+
+function getNhomBenh() {
+    $.post('ChanDoanServlet', $('#frm1').serialize(), function (response) {
+        $('#TQ').text("Tổng quát: " + response);
+        $('#nhombenh').val(response);
+        if ("Bình thường" !== response)
+            $('#myBtn').show();
+        else
+            $('#myBtn').hide();
+    });
 }
-for (i = 0; i < slides.length; i++) {
-slides[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace(" active", "");
-}
-slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        captionText.innerHTML = dots[slideIndex - 1].alt;
-        }
-function comment() {
-    var email = document.getElementById("txtEmail").value;
-    var name = document.getElementById("txtName").value;
-    var cmt = document.getElementById("txtComment").value;
-    
-    if (email === "") {
-    alert('Vui lòng nhập e-mail của bạn ...');
-            return false;
-    } else if (name === "") {
-    alert('Vui lòng nhập tên của bạn ...');
-            return false;
-    } else if (cmt === "") {
-    alert('Mời bạn để lại ý kiến của bạn về sản phẩm');
-            return false;
-    } else {
-    return true;
+
+function rd() {
+    var nhombenh = $('#nhombenh').val();
+    $('.SB').hide();
+    $('.Chuyen').show();
+    $('.HoHap').show();
+    $('.Gan').show();
+    $('.Tieuhoa').show();
+    switch (nhombenh) {
+        case "Hô Hấp":
+            $('.HoHap').show();
+            break;
+        case "Tiêu Hóa":
+            $('.Tieuhoa').show();
+            break;
+        case "Gan":
+            $('.Gan').show();
+            break;
+        default:
+            break;
     }
+
+    $('#myBtn').hide();
+    $('#sobo').hide();
+    $('#chuyen').show();
+}
+
+
+function test() {
+    displayGan();
+    $('select').val('BT');
+    $('#title').text("KHÁM CHUYÊN KHOA")
+    $('#sobo').hide();
+    $('#chuyen').show();
+}
+
+
+function displayGan() {
+    $(document).ready(function () {
+        $('.SB').show();
+        $('.Chuyen').show();
+        $('.Tieuhoa').hide();
+        $('.HoHap').hide();
+        $('.Gan').show();
+    });
 }

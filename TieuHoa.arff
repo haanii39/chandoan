@@ -1,0 +1,23 @@
+@RELATION TieuHoa
+
+@ATTRIBUTE Bung 	{Chuong, Dau, KhoTieu,BT}
+@ATTRIBUTE CamGiac	{BuonNon, OChua,NonRaMau,BT}
+@ATTRIBUTE CanNang	{Thap,Cao,BT}
+@attribute TrieuChungKhac {DauNguc, DangMieng,DauBungDiNgoai, TaoBon,BT}
+@ATTRIBUTE class 	{ViemLoetDaDay, ChuongBung,TraoNguocDaDay,BT}
+
+@DATA
+
+Chuong,BuonNon,Thap,DauBungDiNgoai,ChuongBung
+Chuong,OChua,Thap,DauBungDiNgoai,ChuongBung
+KhoTieu,BuonNon,BT,TaoBon,ChuongBung
+KhoTieu,OChua,BT,TaoBon,ChuongBung
+
+Dau,BuonNon,Thap,DiNgoaiRaMau,ViemLoetDaDay
+Dau,NonRaMau,Thap,DiNgoaiRaMau,ViemLoetDaDay
+
+KhoTieu,BuonNon,Thap,BT,DangMieng,TraoNguocDaDay
+KhoTieu,Ochua,Thap,BT,DauNguc,TraoNguocDaDay
+BT, BT,BT,BT,BT
+
+

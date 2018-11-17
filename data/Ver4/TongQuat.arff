@@ -1,0 +1,44 @@
+@RELATION TongQuat
+
+@ATTRIBUTE Sot {BT,SotCao,SotNhe,SotKOD}
+@ATTRIBUTE Nguc {BT,DauNguc,TucNguc,NangNguc}
+@ATTRIBUTE Bung {BT,DauBung,ChuongBung,SungDau}
+@ATTRIBUTE Da {BT,Vang,TimTai,Kho,Mun}
+@ATTRIBUTE AnUong {BT,KhoNuot,ChanAn,KNgon}
+@ATTRIBUTE CamGiac {BT,BuonNon,DayHoi,OChua,NonRaMau}
+@ATTRIBUTE TheTrang {BT,MetMoi,ThieuSinhLuc,KTapTrung,MatPH}
+
+@ATTRIBUTE ClassTQ {BT,HoHap,Tim,TieuHoa,Gan}
+
+@DATA
+
+SotCao,BT,BT,Kho,BT,BT,BT,HoHap
+SotCao,BT,BT,TimTai,ChanAn,BT,BT,HoHap
+SotNhe,DauNguc,BT,Kho,BT,BuonNon,MetMoi,HoHap
+SotCao,BT,BT,TimTai,ChanAn,BT,BT,HoHap
+BT,DauNguc,DauBung,Kho,BT,BuonNon,MetMoi,HoHap
+
+SotNhe,TucNguc,BT,TimTai,ChanAn,BT,ThieuSinhLuc,Tim
+BT,NangNguc,BT,BT,BT,BT,BT,Tim
+SotNhe,TucNguc,DauBung,TimTai,ChanAn,BT,MetMoi,Tim
+SotNhe,TucNguc,BT,TimTai,BT,BT,BT,Tim
+BT,NangNguc,DauBung,BT,BT,NonRaMau,ThieuSinhLuc,Tim
+SotNhe,NangNguc,BT,TimTai,ChanAn,BT,ThieuSinhLuc,Tim
+
+BT,BT,DauBung,Mun,KhoNuot,DayHoi,KTapTrung,TieuHoa
+BT,BT,ChuongBung,BT,KhoNuot,DayHoi,KTapTrung,TieuHoa
+SotNhe,BT,DauBung,Mun,ChanAn,OChua,BT,TieuHoa
+BT,BT,ChuongBung,BT,ChanAn,DayHoi,BT,TieuHoa
+BT,BT,DauBung,BT,KhoNuot,DayHoi,KTapTrung,TieuHoa
+SotNhe,BT,ChuongBung,Mun,KhoNuot,OChua,KTapTrung,TieuHoa
+
+BT,BT,SungDau,Vang,KNgon,BuonNon,MatPH,Gan
+SotNhe,BT,SungDau,Vang,ChanAn,DayHoi,BT,Gan
+BT,BT,SungDau,BT,KhoNuot,BuonNon,MatPH,Gan
+BT,BT,DauBung,Mun,KNgon,OChua,MatPH,Gan
+SotNhe,BT,SungDau,Vang,KNgon,BuonNon,MatPH,Gan
+BT,BT,DauBung,Vang,KNgon,BuonNon,BT,Gan
+
+BT,BT,BT,BT,KhoNuot,BT,BT,BT
+SotNhe,BT,BT,BT,KNgon,BT,BT,BT
+

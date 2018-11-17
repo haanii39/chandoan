@@ -1,0 +1,50 @@
+@relation HoHap
+
+@ATTRIBUTE Ho {Dam,Mau,Khan,BT}
+@ATTRIBUTE Sot {SotCao,SotNhe,SotKOD,BT}
+@ATTRIBUTE KhoTho {ThoKhoKhe,ThoGap,ThoCham,BT}
+@ATTRIBUTE Mui {NghetMui,ChayNuocMui,HatHoi,BT}
+@ATTRIBUTE Hong {DauHong,RatHong,NguaHong,BT}
+@ATTRIBUTE ToanThan {DauCo,DauDau,DauNguc,MetMoi,BT}
+@ATTRIBUTE AnUong {KhoNuot,ChanAn,KNgon,BT}
+@ATTRIBUTE Class {CamCum,ViemMuiDiUng,HenSuyen,ViemPheQuan,ViemPhoi,BT}
+
+@data
+
+Khan,SotNhe,BT,NghetMui,RatHong,DauCo,BT,CamCum
+Khan,SotCao,ThoKhoKhe,NghetMui,RatHong,DauCo,ChanAn,CamCum
+Khan,SotNhe,ThoKhoKhe,NghetMui,RatHong,DauCo,BT,CamCum
+Khan,SotNhe,BT,NghetMui,RatHong,DauDau,BT,CamCum
+Khan,SotCao,BT,NghetMui,RatHong,DauDau,BT,CamCum
+Khan,SotNhe,BT,NghetMui,RatHong,DauDau,KNgon,CamCum
+
+BT,BT,BT,NghetMui,NguaHong,BT,BT,ViemMuiDiUng
+BT,BT,BT,HatHoi,NguaHong,MetMoi,BT,ViemMuiDiUng
+BT,BT,BT,ChayNuocMui,NguaHong,MetMoi,BT,ViemMuiDiUng
+BT,BT,BT,ChayNuocMui,NguaHong,BT,BT,ViemMuiDiUng
+BT,BT,BT,HatHoi,NguaHong,MetMoi,BT,ViemMuiDiUng
+
+Khan,BT,ThoKhoKhe,NghetMui,BT,DauDau,KNgon,HenSuyen
+Khan,BT,ThoCham,NghetMui,BT,DauDau,KNgon,HenSuyen
+BT,BT,ThoCham,BT,BT,DauNguc,BT,HenSuyen
+BT,BT,ThoKhoKhe,BT,BT,DauNguc,KNgon,HenSuyen
+BT,BT,ThoCham,BT,BT,DauDau,KNgon,HenSuyen
+
+Dam,SotNhe,ThoKhoKhe,BT,BT,MetMoi,BT,ViemPheQuan
+Dam,SotNhe,ThoCham,BT,BT,MetMoi,BT,ViemPheQuan
+Khan,SotNhe,ThoKhoKhe,BT,BT,MetMoi,BT,ViemPheQuan
+Khan,BT,ThoCham,BT,BT,MetMoi,BT,ViemPheQuan
+Dam,BT,ThoKhoKhe,BT,BT,MetMoi,BT,ViemPheQuan
+Dam,BT,ThoKhoKhe,BT,BT,MetMoi,BT,ViemPheQuan
+
+Dam,SotCao,ThoGap,BT,BT,DauDau,ChanAn,ViemPhoi
+Dam,SotNhe,ThoGap,BT,BT,DauDau,KNgon,ViemPhoi
+Dam,SotCao,ThoGap,BT,BT,DauDau,ChanAn,ViemPhoi
+Dam,SotNhe,ThoGap,BT,BT,DauDau,KNgon,ViemPhoi
+Dam,SotCao,BT,BT,BT,DauDau,KNgon,ViemPhoi
+Dam,SotCao,BT,BT,BT,DauDau,BT,ViemPhoi
+
+BT,SotNhe,BT,BT,BT,MetMoi,KNgon,BT
+BT,BT,BT,BT,BT,DauDau,ChanAn,BT
+BT,BT,BT,BT,BT,MetMoi,KNgon,BT
+

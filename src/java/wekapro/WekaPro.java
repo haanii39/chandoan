@@ -15,7 +15,7 @@ import weka.core.Instances;
 
 /**
  *
- * @author dien
+ * @author NhiPhan
  */
 public class WekaPro {
 
@@ -52,20 +52,13 @@ public class WekaPro {
         System.out.println("Dự đoán:");
         System.out.println("---------------------------------------------");
         Program program = new Program();
-        //Phần này nhập vào từ form nha mấy chế:
+        //nhập từ form 
         String Da = "NoiMun";
         String Mat = "BT";
         String Bung = "BT";
         String CanNang = "BT";
         String CamGiac = "OChua";
         String Benh = "BT";
-        //
-        Instances dataRaw = program.createInstance(Da, Mat, Bung, CanNang, CamGiac, Benh);
-        //model.saveData("C:\\Users\\dien\\Desktop\\tt-tDuy\\Data\\iris1.arff", dataRaw);
-        //MyDecisionTreeModel model1 = new MyDecisionTreeModel("C:\\Users\\dien\\Desktop\\tt-tDuy\\Data\\iris1.arff","-C 0.25 -M 2");
-        // model.predictClassLabel(model.testset);
-        model.predictClassLabel(dataRaw);
-        System.out.println(System.getProperty("user.dir"));
     }
 
 }

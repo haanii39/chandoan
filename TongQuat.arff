@@ -1,0 +1,83 @@
+@RELATION TongQuat
+
+@ATTRIBUTE Da 		{Vang,ManNgua,SaoMach,BT}
+@ATTRIBUTE Mat 		{Vang,BT}
+@ATTRIBUTE Bung 	{Chuong,Dau,KhoTieu,BT}
+@ATTRIBUTE CanNang	{Thap,Cao,BT}
+@ATTRIBUTE CamGiac	{BuonNon,OChua,NonRaMau,BT}
+@attribute Ho {HoKhan, HoTangDan, HoCoDam, HoRaMau,BT}
+@attribute DauDau {DauDau,BT,NhucDau, DauDauLienTuc}
+@attribute KhoTho {KhoTho, ThoGap, Thocham, BT}
+@ATTRIBUTE class 	{Gan,TieuHoa,HoHap,BT}
+
+
+@DATA
+Vang,Vang,Chuong,Cao,OChua,BT,BT,BT,Gan
+Vang,BT,Dau,Cao,OChua,BT,BT,BT,Gan
+Vang,BT,Chuong,BT,BuonNon,BT,BT,BT,Gan
+Vang,Vang,KhoTieu,BT,OChua,BT,BT,BT,Gan
+Vang,Vang,Chuong,Cao,OChua,BT,BT,BT,Gan
+Vang,Vang,BT,Cao,OChua,BT,BT,BT,Gan
+Vang,BT,KhoTieu,Cao,BuonNon,BT,BT,BT,Gan
+Vang,Vang,KhoTieu,BT,OChua,BT,BT,BT,Gan
+BT,BT,BT,BT,BT,BT,BT,BT,BT
+BT,Vang,BT,Thap,BT,BT,BT,BT,BT
+BT,BT,Dau,BT,BuonNon,BT,BT,BT,BT
+BT,Vang,BT,BT,BT,BT,BT,BT,BT
+BT,Vang,BT,Thap,BT,BT,BT,BT,BT
+BT,BT,BT,BT,OChua,BT,BT,BT,BT
+ManNgua,BT,Dau,Cao,OChua,BT,BT,BT,TieuHoa
+ManNgua,BT,Chuong,Cao,OChua,BT,BT,BT,TieuHoa
+ManNgua,BT,Chuong,BT,OChua,BT,BT,BT,TieuHoa
+ManNgua,BT,Dau,BT,OChua,BT,BT,BT,TieuHoa
+ManNgua,BT,Dau,BT,BT,BT,BT,BT,BT
+ManNgua,BT,BT,BT,BT,BT,BT,BT,BT
+ManNgua,BT,KhoTieu,BT,BT,BT,BT,BT,BT
+ManNgua,BT,Chuong,BT,BT,BT,BT,BT,BT
+BT,BT,KhoTieu,Cao,OChua,BT,BT,BT,TieuHoa
+BT,BT,Dau,BT,OChua,BT,BT,BT,TieuHoa
+BT,BT,Chuong,Cao,OChua,BT,BT,BT,TieuHoa
+BT,BT,Chuong,BT,OChua,BT,BT,BT,TieuHoa
+Vang,BT,Chuong,Cao,OChua,BT,BT,BT,TieuHoa
+BT,Vang,Dau,BT,BuonNon,BT,BT,BT,TieuHoa
+BT,Vang,KhoTieu,BT,BuonNon,BT,BT,BT,TieuHoa
+BT,Vang,Dau,BT,BuonNon,BT,BT,BT,Gan
+Vang,Vang,BT,BT,OChua,BT,BT,BT,Gan
+Vang,Vang,Dau,BT,OChua,BT,BT,BT,Gan
+Vang,BT,Dau,BT,BuonNon,BT,BT,BT,BT
+BT,BT,Dau,Cao,BuonNon,BT,BT,BT,BT
+BT,Vang,BT,Cao,BT,BT,BT,BT,BT
+ManNgua,BT,Dau,Thap,OChua,BT,BT,BT,TieuHoa
+ManNgua,BT,BT,BT,OChua,BT,BT,BT,TieuHoa
+ManNgua,BT,Dau,BT,BuonNon,BT,BT,BT,TieuHoa
+ManNgua,BT,Dau,Cao,BuonNon,BT,BT,BT,TieuHoa
+ManNgua,Vang,Dau,BT,OChua,BT,BT,BT,TieuHoa
+ManNgua,Vang,Dau,Cao,OChua,BT,BT,BT,TieuHoa
+ManNgua,Vang,Dau,Thap,OChua,BT,BT,BT,TieuHoa
+ManNgua,BT,Dau,BT,BuonNon,BT,BT,BT,TieuHoa
+ManNgua,BT,Dau,Cao,BuonNon,BT,BT,BT,TieuHoa
+ManNgua,BT,Dau,Thap,BuonNon,BT,BT,BT,TieuHoa
+ManNgua,BT,KhoTieu,Cao,BT,BT,BT,BT,BT
+ManNgua,BT,KhoTieu,Thap,BT,BT,BT,BT,BT
+ManNgua,BT,Dau,Cao,BuonNon,BT,BT,BT,TieuHoa
+ManNgua,Vang,Dau,BT,OChua,BT,BT,BT,TieuHoa
+ManNgua,Vang,Dau,Cao,OChua,BT,BT,BT,TieuHoa
+Vang,Vang,Chuong,Cao,OChua,BT,BT,BT,Gan
+Vang,Vang,BT,Cao,OChua,BT,BT,BT,Gan
+Vang,BT,KhoTieu,Cao,BuonNon,BT,BT,BT,Gan
+Vang,Vang,KhoTieu,BT,OChua,BT,BT,BT,Gan
+
+BT,BT,BT,BT,BT,HoKhan,NhucDau,ThoGap,HoHap
+BT,BT,BT,BT,BT,HoKhan,DauDauLienTuc,Thocham,HoHap
+BT,BT,BT,BT,BT,HoKhan,DauDau,KhoTho,HoHap
+
+BT,BT,BT,BT,BT,HoTangDan,DauDauLienTuc,Thocham,HoHap
+BT,BT,BT,BT,BT,HoTangDan,DauDau,ThoGap,HoHap
+BT,BT,BT,BT,BT,HoTangDan,NhucDau,KhoTho,HoHap
+BT,BT,BT,BT,BT,HoCoDam,DauDauLienTuc,ThoGap,HoHap
+BT,BT,BT,BT,BT,HoCoDam,DauDau,KhoTho,HoHap
+BT,BT,BT,BT,BT,HoCoDam,NhucDau,Thocham,HoHap
+
+BT,BT,BT,BT,BT,HoRaMau,DauDau,Thocham,HoHap
+BT,BT,BT,BT,BT,HoRaMau,NhucDau,ThoGap,HoHap
+BT,BT,BT,BT,BT,HoRaMau,DauDauLienTuc,KhoTho,HoHap
